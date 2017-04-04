@@ -1,0 +1,22 @@
+{
+  "AttachStdin" : true,
+  "OpenStdin" : true,
+  "Image" : "",
+  "Volumes" : { },
+  "ExposedPorts" : { },
+  "HostConfig" : {
+    "Binds" : [ ],
+    "NetworkMode" : "coffee-shop",
+    "PortBindings" : {
+      "8080/tcp" : [ {
+        "HostIp" : "",
+        "HostPort" : "8080"
+      } ],
+      "9990/tcp" : [ {
+        "HostIp" : "",
+        "HostPort" : "9990"
+      } ]
+    }
+  },
+  "_comment" : ""
+}

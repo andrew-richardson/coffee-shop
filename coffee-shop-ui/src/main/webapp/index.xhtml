@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>BootsFaces Basic Page</title>
+</h:head>
+<h:body style="padding-top:75px">
+    <b:container id="menu">
+        <b:navBar brand="Coffee Shop" fixed="top" sticky="true" brandHref="#">
+            <b:navbarLinks>
+                <b:navLink value="Menu" href="#"/>
+            </b:navbarLinks>
+        </b:navBar>
+    </b:container>
+    <b:container id="content">
+        <b:panel title="Coffee" collapsible="false">
+            <b:dataTable
+                    value="#{menu.coffeemenu.coffees}"
+                    var="coffee"
+                    border="true"
+                    searching="false"
+                    paginated="false"
+                    responsive="true"
+                    custom-options="info:false"
+            >
+                <b:dataTableColumn label="Name" value="${coffee.name}" />
+                <b:dataTableColumn label="Price" >
+                    <h:outputText value="${coffee.price}">
+                        <f:convertNumber currencySymbol="$" type="currency"/>
+                    </h:outputText>
+                </b:dataTableColumn>
+            </b:dataTable>
+        </b:panel>
+    </b:container>
+</h:body>
+</html>

@@ -1,0 +1,14 @@
+# Mark the commands below to be run as a batch collection
+batch
+
+# Add postgres module
+module add --name=org.postgres --resources=/tmp/postgresql-9.4.1210.jar --dependencies=javax.api,javax.transaction.api
+
+# Add Postgres driver
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+
+# Add the datasource
+data-source add --jndi-name=java:/global/env/datasource/coffeeshopDS --name=coffeeshopDS --connection-url=jdbc:postgresql://coffee-shop-database:5432/coffee_admin --driver-name=postgres --user-name=coffee_admin --password=password --enabled=true
+
+# Execute the batch modifications
+run-batch

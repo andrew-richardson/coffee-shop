@@ -1,0 +1,14 @@
+version: '2'
+services:
+  coffee-shop-database:
+    image: coffee-shop/database:latest
+    ports:
+      - "5432:5432"
+  coffee-shop-service:
+    image: coffee-shop/service:latest
+    ports:
+      - "8080:8080"
+  coffee-shop-ui:
+    image: coffee-shop/ui:latest
+    ports:
+      - "8081:8080"

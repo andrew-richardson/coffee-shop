@@ -1,0 +1,19 @@
+{
+  "AttachStdin" : true,
+  "OpenStdin" : true,
+  "Env" : [ "POSTGRES_PASSWORD=password" ],
+  "Image" : "",
+  "Volumes" : { },
+  "ExposedPorts" : { },
+  "HostConfig" : {
+    "Binds" : [ ],
+    "NetworkMode" : "coffee-shop",
+    "PortBindings" : {
+      "5432/tcp" : [ {
+        "HostIp" : "",
+        "HostPort" : "5432"
+      } ]
+    }
+  },
+  "_comment" : ""
+}
