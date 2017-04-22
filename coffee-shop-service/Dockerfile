@@ -18,7 +18,7 @@ COPY execute.sh /opt/jboss/wildfly/customization/
 RUN sh /opt/jboss/wildfly/customization/execute.sh
 
 ## fix problem with modifying standalone causing permissions issues
-RUN rm -rf /opt/jboss/wildfly/configuration/standalone_xml_history/current/*
+RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history/current/*
 
 ## This will be process 1 of the container
 CMD ["/opt/jboss/wildfly/bin/standalone.sh","-b","0.0.0.0","-bmanagement","0.0.0.0"]
